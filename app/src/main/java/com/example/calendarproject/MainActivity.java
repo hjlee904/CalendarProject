@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // 현재 날짜
         selectedDate = LocalDate.now();
 
-        // 월 버튼을 클릭하면 month 레이아웃으로 화면 전환
+        // 월 버튼을 클릭 시 month 레이아웃으로 화면 전환
         year_jan_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

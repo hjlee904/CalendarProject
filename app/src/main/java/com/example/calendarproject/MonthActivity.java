@@ -1,15 +1,23 @@
 package com.example.calendarproject;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.time.LocalDate;
@@ -23,7 +31,12 @@ public class MonthActivity extends Activity {
     Button month_month_btn;
     LocalDate selectedDate;
 
+    // 월 달력 생성하는 리사이클러 뷰
     RecyclerView recyclerView;
+    // 월 버튼 클릭 시 커스텀 다이얼로그로 뜨는 1~12월 리사이클러 뷰
+    RecyclerView monthBtnListRecyclerView;
+    // 월 버튼 클릭 시 뜨는 커스텀 다이얼로그
+    Dialog monthListDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +51,55 @@ public class MonthActivity extends Activity {
         // 현재 날짜
         selectedDate = LocalDate.now();
 
-        // 화면 설정
+        // 월 달력 화면 설정
         setMonthView();
+
+        // 월 버튼 클릭 시 커스텀 다이얼로그가 뜸
+        month_month_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDefaultDialog();
+            }
+        });
+    }
+
+    // 월 버튼 클릭 시 동작 - 1~12월이 적힌 리사이클러 뷰가 커스텀 다이얼로그로 뜸
+    public void showDefaultDialog() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        monthListDialog = new Dialog(this);
+
+        display.getRealSize(size);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+
+        LayoutInflater inflater = getLayoutInflater();
+        View diaView = inflater.inflate(R.layout.month_list_dialog, null);
+
+        lp.copyFrom(monthListDialog.getWindow().getAttributes());
+        int width = size.x;
+        int height = size.y;
+        lp.width = width * 60 / 100;    // 사용자 화면의 60%
+        lp.height = height * 40 / 100;  // 사용자 화면의 40%
+
+        monthListDialog.setContentView(diaView);
+        monthListDialog.setCanceledOnTouchOutside(true);
+        monthListDialog.getWindow().setAttributes(lp);
+
+        ArrayList<String> monthList = new ArrayList<String>();
+
+        for (int i = 1; i <= 12; i++) {
+            String string = Integer.toString(i);
+            string = string + "월";
+            monthList.add(string);
+        }
+
+        monthBtnListRecyclerView = (RecyclerView) diaView.findViewById(R.id.monthBtnListRecyclerView);;
+        MonthBtnListAdapter adapter = new MonthBtnListAdapter(monthList);
+
+        monthBtnListRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        monthBtnListRecyclerView.setAdapter(adapter);
+
+        monthListDialog.show();
     }
 
     // 날짜 타입 설정 - 년
@@ -72,7 +132,7 @@ public class MonthActivity extends Activity {
         recyclerView.setAdapter(adapter);
     }
 
-    // 날짜 생성 메소드
+    // 월 달력에 날짜를 생성하는 메소드
     private  ArrayList<String> daysInMonthArray(LocalDate date) {
 
         ArrayList<String> dayList = new ArrayList<>();
@@ -99,4 +159,5 @@ public class MonthActivity extends Activity {
 
         return dayList;
     }
+
 }

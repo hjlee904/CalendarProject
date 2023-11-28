@@ -18,6 +18,10 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
         this.dayList = dayList;
     }
 
+    public int getItemCount() {
+        return dayList.size();
+    }
+
     @NonNull
     @Override
     // 화면을 연결 해주는 메소드
@@ -37,11 +41,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
         holder.month_cell_day.setText(dayList.get(position));
     }
 
-    public int getItemCount() {
-        return dayList.size();
-    }
-
-    class CalendarViewHolder extends  RecyclerView.ViewHolder{
+    class CalendarViewHolder extends  RecyclerView.ViewHolder {
 
         // 초기화
         TextView month_cell_day;
