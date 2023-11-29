@@ -19,7 +19,7 @@
             android:layout_marginLeft= "90dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:text="2023년"
+            android:text="0000년"
             android:textSize="25sp"
             android:textAlignment="center"
             android:textColor="@android:color/black" />
@@ -31,7 +31,7 @@
             android:layout_marginRight="90dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:text="11월"
+            android:text="00월"
             android:textSize="25sp"
             android:textAlignment="center"
             android:textColor="@android:color/black" />

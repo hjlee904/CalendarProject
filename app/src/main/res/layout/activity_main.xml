@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <Button
@@ -31,45 +31,113 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/year_jan_btn"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="1월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
 
-        <Button
+            <Button
+                android:id="@+id/year_jan_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
 
-            android:id="@+id/year_feb_btn"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="1월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/jan_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="2월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/year_mar_btn"
+            <Button
+                android:id="@+id/year_feb_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="2월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/feb_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="3월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_mar_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="3월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mar_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -80,44 +148,113 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/year_apr_btn"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="4월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/year_may_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="5월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            <Button
+                android:id="@+id/year_apr_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
 
-        <Button
-            android:id="@+id/year_jun_btn"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="4월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/apr_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="6월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_may_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="5월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/may_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_jun_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="6월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/jun_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -128,44 +265,113 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/year_jul_btn"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="7월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/year_aug_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="8월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            <Button
+                android:id="@+id/year_jul_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
 
-        <Button
-            android:id="@+id/year_sep_btn"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="7월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/jul_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="9월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_aug_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="8월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/aug_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_sep_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="9월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sep_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -176,46 +382,114 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/year_oct_btn"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="10월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/year_nov_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="11월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            <Button
+                android:id="@+id/year_oct_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
 
-        <Button
-            android:id="@+id/year_dec_btn"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="10월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/oct_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:text="12월"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-            android:textAlignment="center"/>
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_nov_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="11월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/nov_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/year_dec_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="12월"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dec_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

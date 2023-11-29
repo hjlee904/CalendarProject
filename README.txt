@@ -1,7 +1,10 @@
 <xml파일 - layout>
 [ activity_main ]
-	: 0000년과 해당 년의 1~12월 캘린더가 있는 화면
+	: 0000년의 연달력(1~12월)이 있는 화면
 	1. 1월을 클릭하면 0000년 11월 달력으로 넘어감
+
+[ main_cell ]
+	: 연달력 화면의 1월부터 12월의 월달력을 생성하는 RecyclerView(id: jan/feb/mar/.../dec_recycler_view)
 
 [ month ]
 	: 0000년 00월의 달력 화면
@@ -15,7 +18,7 @@
 	: month에서 00월을 클릭하면 뜨는 CustomDialog의 RecyclerView(id: monthBtnListRecyclerView)의 아이템들
 
 [ month_cell ]
-	: 달력을 생성하는 RecyclerView (id: recyclerView)
+	: 달력을 생성하는 RecyclerView(id: recyclerView)
 
 <xml파일 - drawable>
 [ month_btn_list_shape ]
@@ -28,7 +31,10 @@
 [ MonthActivity ]
 	: month의 java 파일
 
-[MonthBtnAdapter]
+[ MainCellAdapter ]
+	: RecyclerView "jan/feb/mar/.../dec_recycler_view"의 Adapter
+
+[ MonthBtnAdapter ]
 	: RecyclerView "monthBtnListRecyclerView"의 Adapter
 
 [ CalenderAdapter ]

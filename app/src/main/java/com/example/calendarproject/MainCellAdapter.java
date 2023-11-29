@@ -15,11 +15,11 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder> {
+public class MainCellAdapter extends RecyclerView.Adapter<MainCellAdapter.MainCellViewHolder> {
 
     ArrayList<String> dayList;
 
-    public CalendarAdapter(ArrayList<String> dayList) {
+    public MainCellAdapter(ArrayList<String> dayList) {
         this.dayList = dayList;
     }
 
@@ -30,31 +30,31 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
     @NonNull
     @Override
     // 화면을 연결 해주는 메소드
-    public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainCellViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        View view = inflater.inflate(R.layout.month_cell, parent, false);
+        View view = inflater.inflate(R.layout.main_cell, parent, false);
 
-        return new CalendarViewHolder(view);
+        return new MainCellViewHolder(view);
     }
 
     // 데이터를 연결 해주는 메소드
-    public void onBindViewHolder(CalendarViewHolder holder, int position) {
+    public void onBindViewHolder(MainCellViewHolder holder, int position) {
 
         // 날짜 적용
-        holder.month_cell_day.setText(dayList.get(position));
+        holder.main_cell_day.setText(dayList.get(position));
     }
 
-    class CalendarViewHolder extends  RecyclerView.ViewHolder {
+    class MainCellViewHolder extends  RecyclerView.ViewHolder {
 
         // 초기화
-        TextView month_cell_day;
+        TextView main_cell_day;
 
-        public  CalendarViewHolder(View itemView) {
+        public  MainCellViewHolder(View itemView) {
             super(itemView);
 
-            month_cell_day = itemView.findViewById(R.id.month_cell_day);
+            main_cell_day = itemView.findViewById(R.id.main_cell_day);
         }
     }
 }

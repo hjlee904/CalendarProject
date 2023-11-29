@@ -29,7 +29,7 @@ public class MonthActivity extends Activity {
 
     Button month_year_btn;
     Button month_month_btn;
-    LocalDate selectedDate;
+    private LocalDate currentDate;
 
     // 월 달력 생성하는 리사이클러 뷰
     RecyclerView recyclerView;
@@ -49,10 +49,18 @@ public class MonthActivity extends Activity {
         recyclerView = findViewById(R.id.recyclerView);
 
         // 현재 날짜
-        selectedDate = LocalDate.now();
+        currentDate = LocalDate.now();
 
         // 월 달력 화면 설정
         setMonthView();
+
+        month_year_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 월 버튼 클릭 시 커스텀 다이얼로그가 뜸
         month_month_btn.setOnClickListener(new View.OnClickListener() {
@@ -115,10 +123,10 @@ public class MonthActivity extends Activity {
 
     // 화면 설정
     private void setMonthView() {
-        month_year_btn.setText(yearFromDate(selectedDate));
-        month_month_btn.setText(monthFromDate(selectedDate));
+        month_year_btn.setText(yearFromDate(currentDate));
+        month_month_btn.setText(monthFromDate(currentDate));
 
-        ArrayList<String> dayList = daysInMonthArray(selectedDate);
+        ArrayList<String> dayList = daysInMonthArray(currentDate);
 
         CalendarAdapter adapter = new CalendarAdapter(dayList);
 
@@ -133,7 +141,7 @@ public class MonthActivity extends Activity {
     }
 
     // 월 달력에 날짜를 생성하는 메소드
-    private  ArrayList<String> daysInMonthArray(LocalDate date) {
+    public ArrayList<String> daysInMonthArray(LocalDate date) {
 
         ArrayList<String> dayList = new ArrayList<>();
 
@@ -143,7 +151,7 @@ public class MonthActivity extends Activity {
         int lastDay = yearMonth.lengthOfMonth();
 
         // 해당 월의 첫 번째 날 가져오기
-        LocalDate firstDay = selectedDate.withDayOfMonth(1);
+        LocalDate firstDay = currentDate.withDayOfMonth(1);
 
         // 첫 번째 날 요일 가져오기
         int dayOfWeek = firstDay.getDayOfWeek().getValue();
